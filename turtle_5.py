@@ -1,12 +1,10 @@
 import turtle
 import math
 
-circle = turtle.Turtle()
-
 lists = 20
 R = 100
 
-lists_a = 360 / lists
+circle = turtle.Turtle()
 circle.speed(5)
 circle.goto(0, -R)
 circle.shape(None)
@@ -14,6 +12,8 @@ circle.begin_fill()
 circle.color("orange")
 circle.circle(R)
 circle.end_fill()
+
+lists_a = 360 / lists
 
 def drow_list(x, y, a):
     list = turtle.Turtle()
