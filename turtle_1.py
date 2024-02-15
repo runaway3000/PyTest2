@@ -5,8 +5,8 @@ t.color("red")
 t.width(2)
 t.speed(0.5)
 
-a = 300
-b = 30
+a = 400
+b = 10
 shag = a / b
 
 for _ in range(b):

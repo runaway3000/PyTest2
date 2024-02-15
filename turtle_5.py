@@ -1,57 +1,32 @@
 import turtle
-import math
+t = turtle.Turtle()
 
-lists = 20
-R = 100
 
-circle = turtle.Turtle()
-circle.speed(5)
-circle.goto(0, -R)
-circle.shape(None)
-circle.begin_fill()
-circle.color("orange")
-circle.circle(R)
-circle.end_fill()
+cont_r = int(input("Введите количество кругов: "))
+rad_r = int(input("Введите радиус кругов: "))
 
-lists_a = 360 / lists
+vers_t = []
 
-def drow_list(x, y, a):
-    list = turtle.Turtle()
-    list.color('red', 'green')
-    list.hideturtle()
+deg_t = 360 / cont_r
 
-    list.penup()
-    list.setpos(x, y)
-    list.seth(0)
-    list.speed(1)
-#    list.seth(a)
-#    list.left(19)
-    list.begin_fill()
-    list.pendown()
+def get_pos(a, vers_t):
+    a = t.position()
+    vers_t.append(a)
+t.penup()
+for _ in range(cont_r):
+    get_pos(t.position(), vers_t)
+    t.forward(rad_r*2)
+    t.left(deg_t)
+t.pendown()
 
-    r = math.sqrt(x ** 2 + y ** 2)
+for i in list(vers_t):
+    t.penup()
+    t.goto(i)
+    t.forward(rad_r)
+    t.pendown()
+    t.circle(rad_r)
+    print(i)
 
-    theta = math.atan2(y, x)
-    print(f"lists_a = {lists_a}, i = {i} x = {x}, y = {y}, Угол = {math.degrees(theta)}")
 
-    list.left(math.degrees(theta))
-
-    list.right(20)
-    for _ in range(40):
-        list.forward(5)
-        list.left(1)
-
-    list.left(140)
-    for _ in range(40):
-        list.forward(5)
-        list.left(1)
-
-    list.end_fill()
-    list.penup()
-
-for i in range(lists):
-    x = math.sin(math.radians(lists_a * i)) * R
-    y = math.cos(math.radians(lists_a * i)) * R
-    drow_list(x, y, lists_a * (i - 1))
 
 turtle.done()
