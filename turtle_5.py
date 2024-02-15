@@ -12,6 +12,12 @@ deg_t = 360 / cont_r
 def get_pos(a, vers_t):
     a = t.position()
     vers_t.append(a)
+
+def go_pos(i):
+    t.penup()
+    t.goto(i)
+    t.pendown()
+
 t.penup()
 for _ in range(cont_r):
     get_pos(t.position(), vers_t)
@@ -20,10 +26,7 @@ for _ in range(cont_r):
 t.pendown()
 
 for i in list(vers_t):
-    t.penup()
-    t.goto(i)
-    t.forward(rad_r)
-    t.pendown()
+    go_pos(i)
     t.circle(rad_r)
     print(i)
 
