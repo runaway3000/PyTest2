@@ -20,7 +20,7 @@ def draw_tangent_circles(radius):
     ax.set_aspect('equal', adjustable='box')
     plt.xlabel('X')
     plt.ylabel('Y')
-    plt.title('Три круга, касающихся друг друга')
+    plt.title('Три круга')
     plt.grid(True)
     plt.show()
 

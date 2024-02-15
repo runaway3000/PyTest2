@@ -27,6 +27,4 @@ for i in list(vers_t):
     t.circle(rad_r)
     print(i)
 
-
-
 turtle.done()
